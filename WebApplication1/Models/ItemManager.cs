@@ -42,7 +42,7 @@ namespace WebApplication1.Models
             //catch (Exception ex)
             //{
             //}
-
+            string url = "http://www.fit.hcmus.edu.vn/vn/";
             List<Item> ListItem = new List<Item>();
 
             HtmlAgilityPack.HtmlDocument hd;
@@ -50,7 +50,7 @@ namespace WebApplication1.Models
             {
                 
                 HtmlAgilityPack.HtmlWeb hw = new HtmlAgilityPack.HtmlWeb();
-                hd = hw.Load("http://www.fit.hcmus.edu.vn/vn/");
+                hd = hw.Load(url);
             }
             catch(System.ArgumentException)
             {
@@ -70,7 +70,7 @@ namespace WebApplication1.Models
                 it.Title = title;
 
                 var address = item.SelectSingleNode(".//td[@class='post_title']/a").Attributes["href"].Value.ToString();
-                it.Address = address;
+                it.Address = url + address;
 
                 ListItem.Add(it);
             }
