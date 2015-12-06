@@ -14,6 +14,7 @@ namespace WebApplication1.Controllers
         // GET /api/values
         [HttpGet]
         [Route("")]
+        [Route("api/news")]
         public IEnumerable<Item> Get()
         {
             return _repo.GetAll();
