@@ -23,11 +23,11 @@ namespace WebApplication1
             SupportedMediaTypes.Add(new MediaTypeHeaderValue(rss));
         }
 
-        //public SyndicationFeedFormatter(string format)
-        //{
-        //    this.AddUriPathExtensionMapping("rss", new MediaTypeHeaderValue(format));
-        //    this.AddQueryStringMapping("formatter", "rss", new MediaTypeHeaderValue(format));
-        //}
+        public SyndicationFeedFormatter(string format)
+        {
+            this.AddUriPathExtensionMapping("rss", new MediaTypeHeaderValue(format));
+            this.AddQueryStringMapping("formatter", "rss", new MediaTypeHeaderValue(format));
+        }
 
         Func<Type, bool> SupportedType = (type) =>
         {
