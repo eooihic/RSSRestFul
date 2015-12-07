@@ -13,6 +13,8 @@ namespace WebApplication1
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
             GlobalConfiguration.Configuration.Formatters.Add(new SyndicationFeedFormatter());
+
+            //GlobalConfiguration.Configuration.Formatters.Insert(0, new SyndicationFeedFormatter("text/html"));
         }
     }
 }

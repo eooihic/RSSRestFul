@@ -8,7 +8,7 @@ namespace WebApplication1.Models
 {
     public class UrlRepository : IItemRepository
     {
-        private List<Item> _urls;
+        private List<Item> _urls = new List<Item>();
 
         public UrlRepository()
         { 

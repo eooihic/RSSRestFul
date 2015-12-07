@@ -4,10 +4,10 @@ using System.IO;
 using System.Linq;
 using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
+using System.ServiceModel.Syndication;
 using System.Threading.Tasks;
 using System.Web;
 using System.Xml;
-using Terradue.ServiceModel.Syndication;
 using WebApplication1.Models;
 
 namespace WebApplication1
@@ -22,6 +22,12 @@ namespace WebApplication1
             SupportedMediaTypes.Add(new MediaTypeHeaderValue(atom));
             SupportedMediaTypes.Add(new MediaTypeHeaderValue(rss));
         }
+
+        //public SyndicationFeedFormatter(string format)
+        //{
+        //    this.AddUriPathExtensionMapping("rss", new MediaTypeHeaderValue(format));
+        //    this.AddQueryStringMapping("formatter", "rss", new MediaTypeHeaderValue(format));
+        //}
 
         Func<Type, bool> SupportedType = (type) =>
         {
