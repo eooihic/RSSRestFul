@@ -66,7 +66,7 @@ namespace WebApplication1.Models
                 var month = int.Parse(item.SelectSingleNode(".//tr[2]/td[@class='day_month']").InnerHtml);
                 it.CreatedAt = new DateTime(post_year, month, day);
 
-                var title = item.SelectSingleNode(".//td[@class='post_title']/a").Attributes["title"].ToString();
+                var title = item.SelectSingleNode(".//td[@class='post_title']/a").Attributes["title"].Value.ToString();
                 it.Title = title;
 
                 var address = item.SelectSingleNode(".//td[@class='post_title']/a").Attributes["href"].Value.ToString();
